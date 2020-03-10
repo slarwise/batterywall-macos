@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 img_prefix=$1
 img_suffix=$2
 
