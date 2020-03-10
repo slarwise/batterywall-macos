@@ -3,9 +3,6 @@
 img_prefix=$1
 img_suffix=$2
 
-echo $img_prefix
-echo $img_suffix
-
 while true; do
 
     is_charging="$(pmset -g batt | grep 'AC Power' | wc -l)"
