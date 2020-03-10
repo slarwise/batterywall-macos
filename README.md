@@ -1,6 +1,8 @@
-# Batterywall Macos
+# batterywall-macos
 
-Change desktop background depending on the battery level and if charging.
+Change desktop background depending on the battery level and if charging. Very
+much inspired by
+[battery-wallpaper](https://github.com/adi1090x/battery-wallpaper).
 Currently five different images are used depending on the battery level and
 these are cycled when the battery is charging. The desktop could look like this
 when the battery is charging:
@@ -10,7 +12,7 @@ when the battery is charging:
 
 ## Installation and usage
 
-[Wallpaper](https://github.com/sindresorhus/macos-wallpaper) needs to be
+[wallpaper](https://github.com/sindresorhus/macos-wallpaper) must be
 installed. Then clone this repository with
 
 ```
@@ -48,6 +50,12 @@ So for the first set of images in the `imgs` folder we would have
 
 Use `Ctrl-C` to terminate the script and add `&` to the command to run it in the
 background.
+
+## Example
+
+```
+./batterywall-macos imgs/win95-gruvbox-bright-zooom- .png
+```
 
 ## Improvements
 
