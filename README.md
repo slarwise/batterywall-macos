@@ -4,6 +4,8 @@ Change background depending on the battery level and if charging. Currently five
 different images are used depending on the battery level and these are cycled
 when the battery is charging.
 
+![Preview of battery charging animation](battery-charging.gif)
+
 ## Installation and usage
 
 Clone this repository
