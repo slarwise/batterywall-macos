@@ -1,0 +1,26 @@
+#!/bin/bash
+
+img_prefix="/Users/arvidbjurklint/Dropbox/Chalmers/projects/battery-level/imgs/win95-gruvbox-bright-zooom-tiled-"
+img_suffix=".png"
+
+while true; do
+
+    is_charging="$(pmset -g batt | grep 'AC Power' | wc -l)"
+    battery_level="$(pmset -g batt | grep -o '\d*%' | tr -d '%')"
+
+    if (( $is_charging )); then
+        for i in {0..4}; do
+            wallpaper set $img_prefix$i$img_suffix
+            sleep 0.8
+        done
+    else
+        img_number=$(( battery_level / 21 ))
+        img_expected=$img_prefix$img_number$img_suffix
+        img_actual="$(wallpaper get)"
+
+        if [ "$img_expected" != "$img_actual" ]; then
+            wallpaper set $img_expected
+        fi
+        sleep 1
+    fi
+done
