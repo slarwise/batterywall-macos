@@ -22,7 +22,8 @@ To start the script, run
 ./batterywall-macos
 ```
 
-Use `Ctrl-C` to terminate. Add `&` to the command to run it in the background.
+in the cloned directory, or add the command to your `PATH`. Use `Ctrl-C` to
+terminate. Add `&` to the command to run it in the background.
 
 ## Improvements
 
