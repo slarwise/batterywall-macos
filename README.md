@@ -25,7 +25,7 @@ To start the script, run
 
 in the cloned directory, or add the command to your `PATH`.
 
-- `<img-prefix>`: The absolute path of the base image filename, e.g.
+- `<img-prefix>`: The absolute or relative path of the base image filename, e.g.
   `/Users/username/desktop-backgrounds/img`.
 - `<img-suffix>`: The last part of the file, e.g. `.png`, `.jpg`.
 
