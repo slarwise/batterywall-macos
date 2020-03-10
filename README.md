@@ -6,10 +6,20 @@ when the battery is charging.
 
 ## Installation and usage
 
-Clone this repository, i.e. `git clone
-git@github.com:slarwise/batterywall-macos.git`. Then use `./batterywall-macos`
-to start the script, use `Ctrl-C` to terminate. Add `&` to the start command to
-run it in the background.
+Clone this repository
+
+```
+git clone git@github.com:slarwise/batterywall-macos.git
+```
+
+Then run 
+
+```
+./batterywall-macos
+```
+
+to start the script, `Ctrl-C` to terminate. Add `&` to command to run it in the
+background.
 
 ## Improvements
 
