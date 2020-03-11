@@ -16,7 +16,7 @@ while true; do
             sleep 0.8
         done
     else
-        img_number=$(( battery_level / 21 ))
+        img_number=$(( $((battery_level-1)) / 20 ))
         img_expected=$img_prefix$img_number$img_suffix
         img_actual="$(wallpaper get)"
 
