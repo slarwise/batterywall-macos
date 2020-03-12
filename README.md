@@ -12,7 +12,7 @@ when the battery is charging:
 
 ## Installation
 
-[wallpaper](https://github.com/sindresorhus/macos-wallpaper) must be
+[macos-wallpaper](https://github.com/sindresorhus/macos-wallpaper) must be
 installed. Then clone this repository with
 
 ```
