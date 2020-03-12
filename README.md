@@ -10,7 +10,7 @@ when the battery is charging:
 ![Preview of battery charging animation](battery-charging.gif)
 
 
-## Installation and usage
+## Installation
 
 [wallpaper](https://github.com/sindresorhus/macos-wallpaper) must be
 installed. Then clone this repository with
@@ -18,6 +18,8 @@ installed. Then clone this repository with
 ```
 git clone git@github.com:slarwise/batterywall-macos.git
 ```
+
+## Usage
 
 To start the script, run
 
@@ -59,5 +61,5 @@ background.
 
 ## Improvements
 
-Simplify the way to specify images and if no arguments are given use some
-defaults.
+Enhance the CLI, make a proper argument parser. If no arguments are given for
+images, use one of the provided image sets.
