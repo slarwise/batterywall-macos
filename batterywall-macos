@@ -2,27 +2,76 @@
 
 set -e
 
-img_prefix=$1
-img_suffix=$2
+USAGE=$'Usage: batterywall-macos -p \'image-prefix\' -s \'image-suffix\'.
+Arguments:
+    -p|--prefix <image-prefix>
+    -s|--suffix <image-suffix>
+    [-c|--charge-animation] Cycle through images when charging
+    [-h|--help] Show this text'
 
-while true; do
+if [ "$#" == "0" ]; then
+    echo "$USAGE"
+    exit 1
+fi
 
-    is_charging="$(pmset -g batt | grep 'AC Power' | wc -l)"
-    battery_level="$(pmset -g batt | grep -o '\d*%' | tr -d '%')"
+charge_animation=0
+while (( "$#" )); do
+    key="$1"
 
-    if (( $is_charging )); then
-        for i in {0..4}; do
-            wallpaper set $img_prefix$i$img_suffix
-            sleep 0.8
-        done
-    else
+    case $key in
+        -p|--prefix)
+            img_prefix="$2"
+            shift 2
+            ;;
+        -s|--suffix)
+            img_suffix="$2"
+            shift 2
+            ;;
+        -c|--charge-animation)
+            charge_animation=1
+            shift
+            ;;
+        -h|--help)
+            echo "$USAGE"
+            exit 1
+            ;;
+        *) # unknown option
+            echo "Unknown option supplied: $1"
+            echo "$USAGE"
+            exit 1
+            ;;
+    esac
+done
+
+if (( $charge_animation )); then
+    while true; do
+        is_charging="$(pmset -g batt | grep 'AC Power' | wc -l)"
+        battery_level="$(pmset -g batt | grep -o '\d*%' | tr -d '%')"
+        if (( $is_charging )); then
+            for i in {0..4}; do
+                wallpaper set $img_prefix$i$img_suffix
+                sleep 0.8
+            done
+        else
+            img_number=$(( $((battery_level-1)) / 20 ))
+            img_expected=$img_prefix$img_number$img_suffix
+            img_actual="$(wallpaper get)"
+            if [ "$img_expected" != "$img_actual" ]; then
+                wallpaper set $img_expected
+            fi
+            sleep 1
+        fi
+    done
+else
+    while true; do
+        battery_level="$(pmset -g batt | grep -o '\d*%' | tr -d '%')"
         img_number=$(( $((battery_level-1)) / 20 ))
         img_expected=$img_prefix$img_number$img_suffix
         img_actual="$(wallpaper get)"
-
         if [ "$img_expected" != "$img_actual" ]; then
             wallpaper set $img_expected
         fi
-        sleep 1
-    fi
-done
+        sleep 10
+    done
+
+fi
