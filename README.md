@@ -62,5 +62,4 @@ background.
 
 ## Improvements
 
-Enhance the CLI, make a proper argument parser. If no arguments are given for
-images, use one of the provided image sets.
+If no arguments are given for images, use one of the provided image sets.
