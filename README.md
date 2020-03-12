@@ -32,7 +32,7 @@ in the cloned directory, or add the command to your `PATH`.
 - `<img-prefix>`: The absolute or relative path of the base image filename, e.g.
   `/Users/username/desktop-backgrounds/img`.
 - `<img-suffix>`: The last part of the file, e.g. `.png`, `.jpg`.
-- -c Cycle through images when charging.
+- `-c`: Cycle through images when charging.
 
 The full filename for the image for 0-20% battery level should then be
 
