@@ -7,7 +7,8 @@ img_suffix=$2
 
 while true; do
 
-    is_charging="$(pmset -g batt | grep 'AC Power' | wc -l)"
+    # is_charging="$(pmset -g batt | grep 'AC Power' | wc -l)"
+    is_charging=0
     battery_level="$(pmset -g batt | grep -o '\d*%' | tr -d '%')"
 
     if (( $is_charging )); then
