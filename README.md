@@ -7,7 +7,7 @@ Currently five different images are used depending on the battery level and
 these are cycled when the battery is charging. The desktop could look like this
 when the battery is charging:
 
-![Preview of battery charging animation](battery-charging.gif)
+![Preview of battery charging animation](charge-animation.gif)
 
 
 ## Installation
