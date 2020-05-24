@@ -71,7 +71,7 @@ else
         if [ "$img_expected" != "$img_actual" ]; then
             wallpaper set $img_expected
         fi
-        sleep 10
+        sleep 3
     done
 
 fi
